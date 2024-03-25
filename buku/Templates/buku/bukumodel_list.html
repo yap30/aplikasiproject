@@ -1,0 +1,18 @@
+<ul>
+	<a class="btn btn-success text-white" href="/../">Create</a><br>
+	<!-- Iterate over object_list -->
+	{% for object in object_list %}
+	<!-- Display Objects -->
+	<h6>Title</h6>
+	<li>{{ object.title_book }}</li>
+	<h6>description</h6>
+	<li>{{ object.description_book }}</li>
+	
+	<a class="btn btn-primary text-white" href="/../{{ object.pk }}/updatebuku/">Edit</a>
+    <a class="btn btn-primary text-white" href="/../{{ object.pk }}/deletebuku/">Delete</a>
+	<hr/>
+	<!-- If object_list is empty -->
+	{% empty %}
+	<li>No objects yet.</li>
+	{% endfor %}
+</ul>
