@@ -1,6 +1,7 @@
 from django.db import models
 from datetime import datetime
 from django.utils.html import mark_safe
+from django.contrib.auth.models import User
 
 # from django.contrib.auth import get_user_model
 
@@ -127,5 +128,8 @@ class Review(models.Model):
     customer_name = models.CharField(max_length=200)
     customer_email = models.EmailField(max_length=200)
     customer_review = models.TextField()
-    rate = models.FloatField(null=True) 
+    rate = models.IntegerField()
     date = models.DateTimeField(auto_now_add=True)
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)

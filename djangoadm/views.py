@@ -67,32 +67,35 @@ def custom_404(request, exception):
     return render(request, "404.html", status=404)
 
 # signup page
-def user_signup(request):
+def register(request):
     if request.method == 'POST':
-        form = SignupForm(request.POST)
+        form = UserRegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('landingpagelogin.html')
+            return redirect('landing')
     else:
-        form = SignupForm()
+        form = UserRegistrationForm()
     return render(request, 'landingpageregister.html', {'form': form})
+
 
 # login page
 def user_login(request):
     if request.method == 'POST':
-        form = LoginForm(request.POST)
+        form = UserLoginForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
-            user = authenticate(request, username=username, password=password)
-            if user:
-                login(request, user)    
-                return redirect('landingpage')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('landing')  # Redirect to home page after login
     else:
-        form = LoginForm()
+        form = UserLoginForm()
     return render(request, 'landingpagelogin.html', {'form': form})
 
-#logout page
 def user_logout(request):
     logout(request)
-    return redirect('landingpagelogin.html')
+    return redirect('landing')
+
+def cart(request): 
+    return render(request, "cart.html")
