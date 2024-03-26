@@ -1,14 +1,14 @@
 {
     "builds": [
         {
-            "src": "vercel_app/wsgi.py",
-            "use": "@vercel/python"
+            "src": "aplikasiproject/wsgi.py",
+            "use": "@aplikasiproject/python"
         }
     ],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "vercel_app/wsgi.py"
+            "dest": "aplikasiproject/wsgi.py"
         }
     ],
     "DISABLE_COLLECTSTATIC": {
