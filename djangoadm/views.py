@@ -72,7 +72,7 @@ def register(request):
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('landing')
+            return redirect('user_login')
     else:
         form = UserRegistrationForm()
     return render(request, 'landingpageregister.html', {'form': form})
@@ -95,7 +95,7 @@ def user_login(request):
 
 def user_logout(request):
     logout(request)
-    return redirect('landing')
+    return redirect('user_login')
 
 def cart(request): 
     return render(request, "cart.html")
