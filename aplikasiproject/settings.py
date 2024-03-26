@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-zk%gn9%9lhhph_su*w4o-v$3vl8i61)ax^ge1d3k2hifjsygp3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True #ubah ubah jadi false supaya jalan 404
 
-ALLOWED_HOSTS = ["127.0.0.1","localhost"] #isi 127 dan local host supaya jalan 404
+ALLOWED_HOSTS = ["127.0.0.1","objective-jehanna-pusilkom.koyeb.app"] #isi 127 dan local host supaya jalan 404
 
 
 # Application definition
