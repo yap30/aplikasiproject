@@ -25,9 +25,9 @@ urlpatterns = [
     path('', include('buku.urls')),
     path('', include('validasi.urls')),
     path('', include('webauth.urls')),
-    # path('', include('djangoadm.urls')),
     path('', include('mybookstore.urls')),
     path('', include('mycv.urls')),
+    path('', include('djangoadm.urls')),
     path('admin/', admin.site.urls),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

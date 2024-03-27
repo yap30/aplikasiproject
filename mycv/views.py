@@ -20,13 +20,3 @@ def testimoni(request):
     context["Testimoni"] = Testimoni.objects.all()
     return render(request, "profile_mycv.html", context)
 
-# def testimoni_post(request): 
-#     if request.method == "POST":
-#         # add the dictionary during initialization 
-#         form = Testimoni(request.POST) 
-#         print(form)
-#         if form.is_valid(): 
-#             form.save() 
-#             return redirect("mycv")
-#     else:
-#         return render(request, "profile_mycv.html")
