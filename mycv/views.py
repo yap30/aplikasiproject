@@ -18,5 +18,6 @@ def testimoni(request):
  
     # add the dictionary during initialization
     context["Testimoni"] = Testimoni.objects.all()
+    context["Berita"] = Berita.objects.all()
     return render(request, "profile_mycv.html", context)
 

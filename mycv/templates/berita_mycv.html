@@ -12,16 +12,23 @@
                 </div> -->
             </div>
             <div class="col-md-12 col-lg-5">
-                <div id="carouselId" class="carousel slide position-relative" data-bs-ride="carousel">
+                <div id="carouselId" class="carousel slide position-relative" >
+                    <ol class="carousel-indicators">
+                        <li class="active" data-slide-to="0" data-target="#carouselId"></li>
+                        <li class="active" data-slide-to="1" data-target="#carouselId"></li>
+                        <li class="active" data-slide-to="2" data-target="#carouselId"></li>
+                      </ol>
                     <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item active rounded">
-                            <img src="{% static 'img/study.jpeg' %}" class="rounded" alt="First slide" style="height:350px">
-                            <a href="#" class="btn px-4 py-2 text-white rounded">Aktivitas Saya</a>
+                        {% for headline in Berita %}
+                        <div class="carousel-item {% if forloop.counter == 1 %}active rounded {% endif %}" >
+                            <img src="{{headline.Foto.url}}" class="img-fluid  bg-secondary rounded" alt="First slide" style="height:350px;object-fit: cover;">
+                            <a href="#" class="btn px-4 py-2 text-white rounded">{{headline.Judul}}</a>
                         </div>
                         <div class="carousel-item rounded">
-                            <img src="{% static 'img/music.jpg' %}" class=" rounded" alt="Second slide" style = 'height: 350px;'>
-                            <a href="#" class="btn px-4 py-2 text-white rounded">Rutinitas</a>
+                            <img src="{{headline.Foto.url}}" class="img-fluid rounded" alt="Second slide" style="height:350px;object-fit: cover;">
+                            <a href="#" class="btn px-4 py-2 text-white rounded">{{headline.Judul}}</a>
                         </div>
+                        {% endfor %}
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
