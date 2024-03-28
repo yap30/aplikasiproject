@@ -12,5 +12,5 @@ urlpatterns = [
     path('landingpagelogout/', views.user_logout, name='user_logout'),
     path('landingpageproductdetail/', views.create_review, name='create_review'),
     path('landingpagecart/', views.cart, name='cart'),
-    path('<id>/', views.product, name='detail_review'),
+    # path('<id>/', views.product, name='detail_review'),
 ]
